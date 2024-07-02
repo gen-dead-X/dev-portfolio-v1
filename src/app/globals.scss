@@ -4,6 +4,17 @@
 
 body {
   overflow: hidden;
+  color: rgb(0, 0, 0);
+  background-color: rgb(248 250 252);
+}
+
+body.dark {
+  color: white;
+  background-color: rgb(15 23 42);
+
+  .blob {
+    background: linear-gradient(to right, aquamarine, mediumpurple);
+  }
 }
 
 .blob {
@@ -11,12 +22,14 @@ body {
   height: 300px;
   aspect-ratio: 1;
   border-radius: 50%;
-  background: linear-gradient(to right, aquamarine, mediumpurple);
+  background: linear-gradient(to right, rgb(8, 255, 255), rgb(253, 51, 253));
   animation: blob-can-you-rotate-please 20s linear infinite;
 }
 
 .blob-blur__overlay {
   position: absolute;
+  top: 0;
+  left: 0;
   height: 100%;
   width: 100%;
   z-index: 2;

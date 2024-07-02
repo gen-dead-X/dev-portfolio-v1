@@ -1,0 +1,11 @@
+@media screen and (min-width: 1024px) {
+  body {
+    .theme-toggle-button {
+      top: -600% !important;
+
+      &:hover {
+        top: 0 !important;
+      }
+    }
+  }
+}

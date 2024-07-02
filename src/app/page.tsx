@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect } from "react";
+import Navbar from "./ui/Navbar/navbar";
+import { UserContextProvider } from "./Context/UserContext";
 
 export default function Home() {
   useEffect(() => {
@@ -21,9 +23,10 @@ export default function Home() {
   }, []);
 
   return (
-    <>
+    <UserContextProvider>
+      <Navbar />
       <div id="blob" className="blob"></div>
       <div className="blob-blur__overlay"></div>
-    </>
+    </UserContextProvider>
   );
 }
