@@ -2,16 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+body {
+  overflow: hidden;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.blob {
+  position: absolute;
+  height: 300px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: linear-gradient(to right, aquamarine, mediumpurple);
+  animation: blob-can-you-rotate-please 20s linear infinite;
+}
+
+.blob-blur__overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  backdrop-filter: blur(150px);
+}
+
+@keyframes blob-can-you-rotate-please {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    scale: 1 1.5;
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
