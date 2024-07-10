@@ -1,11 +1,11 @@
-import type React from "react";
+import type React from 'react';
 import {
   type ReactNode,
   createContext,
   useEffect,
   useMemo,
   useState,
-} from "react";
+} from 'react';
 
 type UserContext = {
   darkMode: boolean;
@@ -17,11 +17,11 @@ type UserContext = {
 export const UserContext = createContext<UserContext>({
   darkMode: false,
   setDarkMode: () => {
-    throw new Error("Function not implemented.");
+    throw new Error('Function not implemented.');
   },
   layoutStyles: { isGrid: true },
   setLayoutStyles: () => {
-    throw new Error("Function Not implemented.");
+    throw new Error('Function Not implemented.');
   },
 });
 
@@ -32,14 +32,14 @@ export const UserContextProvider = ({ children }: { children: ReactNode }) => {
   /* Theme Toggling Function */
 
   function setDark() {
-    document.querySelector("body")?.classList.add("dark");
+    document.querySelector('body')?.classList.add('dark');
     setDarkMode(true);
-    localStorage.setItem("dark", "true");
+    localStorage.setItem('dark', 'true');
   }
 
   function setLight() {
-    document.querySelector("body")?.classList.remove("dark");
-    localStorage.setItem("dark", "false");
+    document.querySelector('body')?.classList.remove('dark');
+    localStorage.setItem('dark', 'false');
     setDarkMode(false);
   }
 
@@ -47,7 +47,7 @@ export const UserContextProvider = ({ children }: { children: ReactNode }) => {
     /* Get Preferred Layout */
     function getPreferredLayout() {
       const layoutStyles = JSON.parse(
-        localStorage.getItem("layoutStyles") ?? "false"
+        localStorage.getItem('layoutStyles') ?? 'false'
       );
 
       if (layoutStyles) {
@@ -57,9 +57,9 @@ export const UserContextProvider = ({ children }: { children: ReactNode }) => {
 
     /* Getting User Preferred Theme */
     function getTheme() {
-      const dark = localStorage.getItem("dark");
+      const dark = localStorage.getItem('dark');
       const isDarkPreferred = window.matchMedia(
-        "(prefers-color-scheme: dark)"
+        '(prefers-color-scheme: dark)'
       ).matches;
 
       if (!dark) {
@@ -67,7 +67,7 @@ export const UserContextProvider = ({ children }: { children: ReactNode }) => {
         return;
       }
 
-      if (dark === "true") {
+      if (dark === 'true') {
         setDark();
         return;
       }

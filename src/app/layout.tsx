@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
-import "./globals.scss";
+import type { Metadata } from 'next';
+import './globals.scss';
 
 export const metadata: Metadata = {
-  title: "DevFolio",
-  description: "The Developer Portfolio of Joyrudra Biswas",
+  title: 'DevFolio',
+  description: 'The Developer Portfolio of Joyrudra Biswas',
 };
 
 export default function RootLayout({
