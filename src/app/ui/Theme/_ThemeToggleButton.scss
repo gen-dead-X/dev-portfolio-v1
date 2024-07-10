@@ -1,10 +1,25 @@
+.theme-button-container {
+  cursor: url('/custom_cursors/switch_off.png'), default;
+}
+
+body.dark {
+  .theme-button-container {
+    cursor: url('/custom_cursors/switch_on.png'), default;
+  }
+}
+
 @media screen and (min-width: 1024px) {
   body {
-    .theme-toggle-button {
-      top: -600% !important;
+    .theme-button-container {
+      transform: translateY(-30%);
+      transition: all 0.3s;
 
       &:hover {
-        top: 0 !important;
+        transform: translateY(0);
+      }
+
+      &:active {
+        transform: translateY(-5%);
       }
     }
   }

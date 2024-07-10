@@ -22,22 +22,18 @@ export default function ThemeToggleButton() {
   }
 
   return (
-    <div className="theme-button-container relative w-full">
-      <button type="button" onClick={handleThemeChange} className="w-full">
-        <div
-          className={
-            'w-fill theme-toggle-button absolute top-0 h-auto transition-all duration-200'
-          }
-        >
-          <Image
-            className="h-full w-full object-cover"
-            src={darkMode ? '/light_bulb_dark.svg' : '/light_bulb_light.svg'} // Path to the image in the public folder
-            alt="Light Bulb"
-            width={'50'}
-            height={'200'}
-          />
-        </div>
-      </button>
-    </div>
+    <button
+      type="button"
+      onClick={handleThemeChange}
+      className="theme-button-container h-fit w-fit"
+    >
+      <Image
+        className="h-full w-full object-cover"
+        src={darkMode ? '/light_bulb_dark.svg' : '/light_bulb_light.svg'} // Path to the image in the public folder
+        alt="theme-toggler"
+        width={0}
+        height={0}
+      />
+    </button>
   );
 }
